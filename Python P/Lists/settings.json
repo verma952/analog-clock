@@ -1,0 +1,20 @@
+{
+    "terminal.explorerKind": "external",
+    "terminal.integrated.defaultProfile.windows": null,
+    "terminal.integrated.tabs.hideCondition": "singleTerminal",
+    "terminal.integrated.tabs.location": "right",
+    "task.quickOpen.skip": true,
+    "problems.defaultViewMode": "tree",
+    "problems.showCurrentInStatus": false,
+    "timeline.pageOnScroll": false,
+    "liveServer.settings.host": "127.0.0.45",
+    "terminal.integrated.altClickMovesCursor": true,
+    "C_Cpp.vcFormat.indent.gotoLabels": "none",
+    "merge-conflict.diffViewPosition": "Current",
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.showRunCommandInEditorContextMenu": true,
+    "code-runner.showRunIconInEditorTitleMenu": true
+}
