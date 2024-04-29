@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: rgb(244, 241, 241);
+        }
+        .container {
+            border-image:url("Untitled.jpeg") ;
+             margin: auto;
+             margin-top:10%;
+             width: 700px;
+             height: 500px;
+             background-color:hsl(0, 14%, 93%);
+             text-align: center;
+             align-items: center;
+             border-radius: 30px;
+             box-shadow:4px 3px 20px #5c5a5a,inset -20px -20px 60px #e6e4e4;
+             text-shadow:4px 3px 20px #5c5a5a,inset -20px -20px 60px #e3d8d8;
+        }
+        .time{
+            font-size:60px;
+            text-align: center;
+            font-family: 'Zen Dots', sans-serif;
+            padding:60px 0px 0px 0px;
+            margin-top:2px;
+            padding-left: 4%;
+            padding-right: 4%;
+            display: flex;
+            border: none;
+            border-radius:0;
+            color:hsl(259, 97%, 55%);
+            justify-content: space-between;
+        }
+        .date{
+            display:flex;
+            font-size: 70px;
+            text-align: center;
+            font-family: 'Zen Dots', sans-serif;
+            padding-top: 8%;
+            padding-left: 4%;
+            padding-right: 4%;
+            color: hsl(192, 78%, 58%);
+            justify-content: space-between;
+        }
+        .day {
+            font-size:70px;
+            width: 520px;
+            font-family: 'Zen Dots', sans-serif;
+            color: hsl(146, 96%, 69%);
+            margin-top: 25px;
+            margin-left: 90px;
+            box-shadow:4px 3px 20px #ee6e19,inset -20px -20px 60px #4b4a4a40;
+            border-radius:20px;
+       }
+       .box-style {
+           background-color:hsl(0, 9%, 90%);
+           border-radius:12%;
+           box-shadow:4px 3px 20px #74737360,inset -20px -20px 60px #45434340;
+           
+       }
+       div :hover {
+        text-decoration: underline;
+        font-weight: 10;
+        box-shadow:4px 3px 20px #00000060,inset -20px -20px 60px #ffffff40;
+       }
+       #hour {
+          width:140px;
+          height:100px;
+          text-align: center;
+          padding-top:20px;
+       }
+       #minutes {
+          width:140px;
+          height:100px;
+          text-align: center;
+          padding-top:20px;
+       }
+       #seconds {
+          width:140px;
+          height:100px;
+          text-align: center;
+          padding-top:20px;
+          color: rgb(75, 74, 74);
+       }
+       #miliseconds{
+          width:180px;
+          height:100px;
+          text-align: center;
+          padding-top:20px;
+       }
+       #dat {
+          width:150px;
+          height:100px;
+          text-align: center;
+          padding-top:20px;
+       }
+       #month {
+          width:140px;
+          height:100px;
+          text-align: center;
+          padding-top:20px;
+       }
+       #year {
+          width:280px;
+          height:100px;
+          text-align: center;
+          border:5px solid ;
+          border-image:url(".\pics\icons8-clock-16.ico") ;
+          padding-top:20px;
+       }
+       .analog_clock {
+            width: 400px;
+            height: 60px;
+            position: relative;
+            font-size: 40px;
+            transform: translate(250px,00px);
+            background-color: rgb(249, 250, 251);
+            width: 350px;
+            border: none;
+            text-align: center;
+            border-radius: 20px;
+            font-size:50px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            box-shadow:4px 3px 20px #00000060,inset -20px -20px 60px #ffffff40;
+        }
+        a {
+            text-decoration: none;
+            text-align: center;
+            color:rgb(55, 54, 54);
+        }
+        .heading {
+            text-align: center;
+            margin-top: 50px;
+            font-size:80px;
+            color: rgb(19, 134, 235);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            animation: shadow 2s infinite;
+        }
+        @keyframes shadow {
+            0% {
+                color: rgb(102, 102, 245);
+                transform: rotate(2deg);
+            }
+            20% {
+                color: #ee6e19;
+            }
+            50% {
+                color: rgba(255, 60, 0, 0.888);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="analog_clock"><a href="analog_clock.html">Analog Clock</a></button>
+    <div class="container">
+        <div class="time" id="time">
+            <div id="hour" class="box-style"></div>
+            <div id="minutes" class="box-style"></div>
+            <div id="seconds" class="box-style"></div>
+            <div id="miliseconds" class="box-style"></div>
+        </div>
+        <div class="date" id="date">
+            <div id="dat" class="box-style"></div>
+            <div id="month" class="box-style"></div>
+            <div id="year" class="box-style"></div>
+        </div>
+        <div class="day" id="day"></div>
+    </div>
+
+    <script>
+        setInterval(
+            function(){
+            let newDate = new Date();
+            let myHour = newDate.getHours();
+            let myMinutes = newDate.getMinutes();
+            let mySeconds = newDate.getSeconds();
+            let myMiliSeconds = newDate.getMilliseconds();
+            let myDate = newDate.getDate();
+            let myDay = newDate.getDay();
+            let myYear = newDate.getFullYear();
+            let myMonth = newDate.getMonth();
+            document.getElementById('hour').innerText = myHour;
+            document.getElementById('minutes').innerText = myMinutes;
+            document.getElementById('seconds').innerText = mySeconds;
+            document.getElementById('miliseconds').innerText = myMiliSeconds;
+            document.getElementById('dat').innerText = myDate;
+            document.getElementById('month').innerText= myMonth+1;
+            document.getElementById('year').innerText = myYear;
+            
+            if(myDay==7){
+                Day = 'SUNDAY';
+            }
+            else if(myDay == 1){
+                Day = 'MONDAY';
+            }
+            else if(myDay == 2){
+                Day = 'TUESDAY';
+            }
+            else if(myDay == 3){
+                Day = 'WEDNESDAY';
+            }
+            else if(myDay == 4){
+                Day = 'THURSDAY';
+            }
+            else if(myDay == 5){
+                Day = 'FRIDAY';
+            }
+            else if(myDay == 6){
+                Day = 'SATURDAY';
+            }
+        
+        document.getElementById('day').innerText = `${Day}`;
+        
+      },1);
+    </script>
+</body>
+</html>
