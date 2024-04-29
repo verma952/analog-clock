@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket game</title>
+    <style>
+        body {
+            align-items: center;
+        }
+        #Bat {
+            background-color: white;
+            border: none;
+            margin: 20px;
+            cursor: pointer;
+        }
+        #Ball {
+            background-color: rgb(249, 248, 248);
+            border: none;
+            margin: 20px;
+            cursor: pointer;
+        }
+        #Stump {
+            background-color: white;
+            border: none;
+            margin: 20px;
+            cursor: pointer;
+        }
+        #reset {
+            margin-left: 60px;
+            width:100px;
+            height:70px;
+            font-size: 25px;
+            border-radius: 20px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bat, Ball , Stump Game</h1>
+    <button id="Ball" onclick ="computerChoice = generateComputerChoice();
+    resultMsg = getResult('ball', computerChoice);
+    showResult('ball', computerChoice, resultMsg); choosed('Ball');"> <img src="ball.png" alt="  " width = "150px"></button>
+
+
+    <button id="Bat" onclick="computerChoice = generateComputerChoice(); 
+     resultMsg = getResult('bat', computerChoice);
+     showResult('bat', computerChoice, resultMsg); choosed('Bat');"> <img src="bat.png" alt="Bat Image" width="150px"></button>
+
+
+    <button id="Stump" onclick="computerChoice = generateComputerChoice();
+    resultMsg = getResult('stump', computerChoice);
+      showResult('stump', computerChoice, resultMsg); choosed('Stump');"><img src="stump.png" alt="Stump Image" width="100px"></button>
+
+
+    <button  id="reset" onclick="localStorage.clear();resetScore(scoreStr);">Reset</button>
+
+    <h3 id = "user-move"></h3>
+    <h3 id="computer-move"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
+    <script>
+        let scoreStr = localStorage.getItem('Score');
+        var score = JSON.parse(scoreStr) || {
+            win : 0,
+            lost : 0,
+            tie : 0,
+        }
+        function resetScore(scoreStr){
+            score = {
+            win : 0,
+            lost : 0,
+            tie : 0,
+        }
+        document.getElementById('reset').innerText ='Reseted'
+        }
+        function generateComputerChoice(){
+           let num = Math.random()*3;
+            if (num < 1) {
+                 return 'bat';
+                }
+            else if (num < 2) {
+                 return 'ball'
+                } 
+            else {
+                return 'stump';
+                }
+        }
+        function  getResult(userMove, computerMove) {
+             {
+            if (userMove === computerMove) {
+                    score.tie++;
+                    return `It's a Tie`;
+                }
+                else if ( userMove === 'bat'){
+                    if (computerMove === 'ball'){
+                        score.win++;
+                        return 'You won ';
+                    }
+                    else if (computerMove === 'stump'){
+                        score.lost++;
+                        return 'Computer won';
+                    }
+                }
+                else if(userMove === 'ball'){
+                    if (computerMove ==='stump'){
+                        score.win++;
+                        return 'You won ';
+                    }
+                    else if (computerMove === 'bat'){
+                        score.lost++;
+                        return 'Computer won';
+                    }
+                }  
+                else if(userMove === 'stump'){
+                    if (computerMove ==='bat'){
+                        score.win++;
+                        return 'You won ';
+                    }
+                    else if (computerMove === 'ball'){
+                        score.lost++;
+                        return 'Computer won';
+                    }
+                } 
+            }
+        };
+        
+        function displayScore(){ 
+            document.getElementById('score') ;
+            return `Score :- Won: ${score.win}, Lost: ${score.lost}, Tie: ${score.tie}`;
+            showResult();
+        };
+        function showResult(userMove, computerMove
+        , result){
+          localStorage.setItem('Score',JSON.stringify(score));
+
+          document.querySelector('#user-move').innerText = userMove ? `You have Choosen ${userMove}` : '';
+            
+          document.querySelector('#computer-move').innerText = computerMove ? `Computer has Choosen ${computerMove}` : '';
+
+          document.querySelector('#result').innerText = `Result: ${resultMsg}` || '';
+
+          document.querySelector('#score').innerText = displayScore();
+
+          document.getElementById('reset').innerText = 'Reset';
+        }
+    </script>
+</body>
+
+</html>

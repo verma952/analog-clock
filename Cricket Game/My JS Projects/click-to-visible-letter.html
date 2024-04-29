@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Visible Letter</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            user-select: none;
+            font-family: cursive;
+            
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background:linear-gradient(to right, #f0f, #0f0);
+        }
+
+        div {
+            text-align: center;
+            font-size: 15rem;
+            text-shadow: 5px 8px 10px pink;
+        }
+         
+        #a,#s,#u,#d,#e,#vv,#complete {
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="v">
+        <span>V</span>
+    </div>
+    <div id="a">
+        <span>A</span>
+    </div>
+    <div id="s">
+        <span>S</span>
+    </div>
+    <div id="u">
+        <span>U</span>
+    </div>
+    <div id="d">
+        <span>D</span>
+    </div>
+    <div id="e">
+        <span>E</span>
+    </div>
+    <div id="vv">
+        <span>V</span>
+    </div>
+    
+    <div id="complete">
+        <span>VASUDEV</span>
+    </div>
+    <script>
+
+        const V = document.getElementById('v');
+        const A = document.getElementById('a');
+        const S = document.getElementById('s');
+        const U = document.getElementById('u');
+        const D= document.getElementById('d');
+        const E = document.getElementById('e');
+        const Vv = document.getElementById('vv');
+        const Vasudev = document.getElementById('complete');
+
+        V.addEventListener("click",()=>{
+            V.style.display = "none";
+            A.style.display ="block";
+            
+        });
+        A.addEventListener("click",()=>{
+            A.style.display = "none";
+            S.style.display ="block";
+            
+        });
+        S.addEventListener("click",()=>{
+            S.style.display = "none";
+            U.style.display ="block";
+            
+        });
+        U.addEventListener("click",()=>{
+            U.style.display = "none";
+            D.style.display ="block";
+            
+        });
+        D.addEventListener("click",()=>{
+            D.style.display = "none";
+            E.style.display ="block";
+            
+        });
+        
+        E.addEventListener("click",()=>{
+            E.style.display = "none";
+            Vv.style.display ="block";
+            
+        });
+
+        Vv.addEventListener("click",()=>{
+            Vv.style.display = "none";
+            Vasudev.style.display ="block";
+            
+        });
+        Vasudev.addEventListener("click",()=>{
+            Vasudev.style.display = "none";
+            V.style.display ="block";
+            
+        });
+    </script>
+</body>
+</html>
