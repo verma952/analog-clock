@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name = "viewport" content =" width=device-width, intial-scale = 1.0"></meta>
+        <title>Registration Page</title>
+        <style>
+            body {
+                background-image:linear-gradient(to right, blue, rgb(145, 123, 231));
+                align-items: center;
+                text-decoration:snow;
+                background-size: auto;
+                border-image-width: auto;
+                user-select: unset;
+                align-items: center;
+                user-select: none;
+            }
+            .container {
+                background-color:white;
+                opacity: .75;
+                width:30%;
+                min-width:300px;
+                height:540px;
+                display: flow-root;
+                border-radius: 4px;
+                scroll-behavior:auto;
+                margin:auto;
+                margin-top:40px ;
+                animation-name: color;
+                animation-duration:20s ;
+                animation-timing-function:ease-in;
+                animation-iteration-count: infinite;
+                padding-left:1%;
+                padding-right: 3%;
+            }
+            h1 {
+                text-align: center;
+            }
+            p {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size:18px;
+                cursor:auto;
+            }
+            input {
+                font-family: 'Times New Roman', Times, serif;
+                cursor:auto;
+                border: none;
+                border-bottom: 1px solid black;
+                            }
+            .email {
+                height:40px;
+                border-bottom: 0.2px solid rgb(141, 140, 140);
+                border-radius:2px;
+                font-size: 20px;
+                
+            }
+            #name, #phone-number, .password, .email{
+                 
+                height:40px;
+                border-bottom:0.2px solid rgb(138, 137, 137);
+                border-radius: 2px;
+                font-size: 20px;
+                margin-left: 0px;
+                width: 300px;
+            }
+            button {
+                position:relative;
+                width: 260px;
+                height: 40px;
+                margin-top:20px;
+                margin-left:10%;
+                margin-right: 10%;
+                background-color: rgb(244, 161, 45);
+                font-style: italic;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size:30px;
+                border: none;
+                border-radius: 10px;
+                cursor:pointer;
+            }
+            #alert-email, #alert-pass, .nameAlert, .numberAlert{
+                font-size: 12px;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "container">
+            
+            <h1>Registration Form</h1>
+            <form> 
+            <table>
+            <tr>
+             <td> 
+                <p>Name :</p>
+            </td>
+            <td>
+                <input type="alpha" id="name" placeholder="Enter your Name">
+                <div class="nameAlert"></div>
+             </td>
+             </tr>
+             <tr> 
+             <td>  
+                 <p>Phone Number :</p>
+             </td>
+             <td>  
+                <input type="number" id="phone-number" placeholder="Enter your Phone Number"> 
+                <div class="numberAlert"></div>
+            </td>
+            </tr> 
+            <tr> 
+            <td> 
+                <p>Email :</p>
+            </td>
+            <td> 
+                <input class = "email" id= "email" type = "email" placeholder="name@domain.com" spellcheck="true">
+                <div id="alert-email"></div>
+            </td>
+           </tr>
+             
+            <tr> 
+            <td> 
+            <p>Password :</p>
+            </td>
+            <td> 
+                    <input class="password" id="password" type = "password" placeholder="Password" visibilty = "yes" >
+                    <div id = "alert-pass"></div>
+            </td>
+          </tr>
+            </table>
+            <button type = "submit" onclick="check();">Submit</button>
+                </form>
+                <footer style ="padding-top: 20px;">Made with ❤️ by Vasudev </footer> 
+                <p style="font-size: 10px;">copyright &copy Vasudev</p>
+                
+        </div>
+        <script>
+         function check(){
+            let pass = document.getElementById("password").value;
+            let passAlert = document.getElementById("alert-pass");
+            let emailAddress = document.getElementById("email").value;
+            let emailAlert = document.getElementById("alert-email");
+            let name = document.getElementById("name").value;
+            let phoneNumber = document.getElementById("phone-number").value;
+            let nameAlert = document.querySelector(".nameAlert");
+            let numberAlert = document.querySelector(".numberAlert");
+            if(name.length < 6){
+                nameAlert.innerText = "*Enter a valid name";
+            }
+            if(name.length >= 6){
+                nameAlert.innerText = '';
+            }
+            if(phoneNumber.length != 10){
+                numberAlert.innerText = "*Enter a valid phone Number";
+            }
+            if(phoneNumber.length == 10){
+                numberAlert.innerText = '';
+            }
+            if(pass.length < 6){
+               passAlert.innerText = `*Password must contains atleast 6 characters `;
+            }
+            if(emailAddress.includes('@') == false){
+                emailAlert.innerText = '*Please enter a valid email address';
+            }
+            if(pass.length >= 6){
+               passAlert.innerText = '';
+            }
+            if(emailAddress.includes('@')){
+                emailAlert.innerText = '';
+            }
+
+        }
+        
+        </script>
+    </body>
+</html>

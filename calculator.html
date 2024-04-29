@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8 width-device-width" scale = "1.0">
+        <title>Calculator</title>
+        <style>
+
+h1 {
+    color:#ff5555;
+    text-align:center;
+    right:30px;
+    font-size:px;
+    
+}
+div{
+  position: auto;
+  border:1px solid blue;
+  border-radius:20px;
+  background-color:#8844dd;
+  width:375px;
+}
+input {
+    color:#ffffff;
+    width:px;
+    margin-bottom:px;
+    height:100px;
+    font-size:50px;
+    background-color:#ff2299;
+    text-align:right;
+}
+#display {
+    border:1px solid black;
+    height:100px;
+    width:350px;
+    border-radius:10px;
+    margin-top:10px;
+    margin-bottom:30px;
+    background-color:black;
+    display:inline-block ;
+}
+table{
+    display:flex;
+    border:1px solid black;
+    height:px;
+    width:px ;
+    top:10px;
+    border-radius:10px;
+    
+}
+button {
+    display:block ;
+    margin:.1p;
+    padding:10px;
+    font-weight:bold;
+    font-size:30px;
+    width:86px;
+    height:70px;
+    border:none;
+    background-color:#ff2299;
+    border-radius:10px;
+    cursor:;
+    font-variant:armenian ;
+    text-shadow:200px;
+    color:white;
+}
+body {
+    background-color:#446633;
+             background-image:url("https://www.shutterstock.com/image-vector/math-chalkboard-vector-illustration-physics-260nw-1398586361.jpg")
+}   
+        </style>
+    </head>
+    <body style ="position:fixed; align-items: center;">
+        <script>let currentDisplay = '';
+
+            function addToDisplay(value){
+                currentDisplay += value;
+                document.getElementById("display").value = currentDisplay ;
+            }
+            
+             function clearDisplay(){
+                 currentDisplay ='';
+                 document.getElementById("display").value="";
+             }
+             function backspace(){
+                d = document.getElementById('display');
+                d.value = d.value.slice(0,-1);
+                currentDisplay = d.value;
+             }
+             function calculate() {
+                 let result = eval(currentDisplay);
+                 document.getElementById("display").value = result;
+                     if(currentDisplay == ''){
+                         document.getElementById('display').value = " ";
+                     }
+                    if(currentDisplay == '+'){
+                        document.getElementById("display").value = 'error';
+                    }
+             }
+            document.addEventListener('keydown', function(event){
+                 const key = event.key;
+                 if(!isNaN(key) || key === '.' || key ==='+' || key ==='-' || key === '*' || key === '÷'){
+                     addToDisplay(key).value = currentDisplay;
+                     
+                 }
+             })</script>
+         
+    <header><h1>CALCULATOR</h1></header>
+    <hr>
+    <div class = "container"   ="center">
+            <input type ="text" id ="display" disabled >
+            
+        <table>
+        <tr>
+            <td><button onclick ="addToDisplay('Math.sqrt')">√</button></td>
+            <td><button onclick ="addToDisplay('(')">(</button></td>
+            <td><button onclick = "addToDisplay(')')">)</button></td>
+            <td><button onclick="backspace()">&#8592</button></td>
+        </tr>
+<tr>
+<td><button onclick = "addToDisplay('Math.PI')">π</button></td>
+<td><button onclick="addToDisplay('Math.E')">e</button></button></td>
+<td><button onclick="addToDisplay('**')">^</button></td>
+<td><button onclick ="clearDisplay()">C</button></td>
+</tr>
+    <tr>
+ <td><button onclick ="addToDisplay('1')">1</button></td>
+ <td><button onclick="addToDisplay('2')">2</button></td>
+ <td><button onclick="addToDisplay('3')">3</button></td>
+ <td><button onclick="addToDisplay('+')">+</button></td>
+  </tr>  
+  <tr>
+  <td><button onclick="addToDisplay('4')">4</button></td>
+  <td><button onclick="addToDisplay('5')">5</button></td>
+  <td><button onclick="addToDisplay('6')">6</button></td>
+  <td><button onclick="addToDisplay('-')">-</button></td>
+   </tr>
+   <tr>
+  <td><button onclick ="addToDisplay('7')">7</button></td>
+  <td><button onclick="addToDisplay('8')">8</button></td>
+  <td><button onclick ="addToDisplay('9')">9</button></td>
+  <td><button onclick="addToDisplay('*')">×</button></td>
+                </tr>
+  <td><button onclick ="addToDisplay('0')">0</button></td>
+  <td><button onclick ="addToDisplay('.')">.</button></td>
+  <td><button onclick ="addToDisplay('/')">÷</button></td>
+ <td><button onclick="calculate()">=</button></td>
+                
+            </table>
+            </div>
+        
+    </body>
+</html> 

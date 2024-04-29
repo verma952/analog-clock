@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name = "viewport" content =" width=device-width, intial-scale = 1.0"></meta>
+        <title>Login Page</title>
+        <style>
+            body {
+                background-image:linear-gradient(to right, blue, white);
+                align-items: center;
+                text-decoration:snow;
+                background-repeat: no-repeat;
+                background-size: auto;
+                border-image-width: auto;
+                user-select: unset;
+                align-items: center;
+            }
+            .container {
+                background-color:white;
+                opacity: .5 ;
+                width: 400px;
+                height: 450px;
+                text-align: center;
+                display: flow-root;
+                border-radius: 4px;
+                scroll-behavior:auto;
+                margin:auto;
+                margin-top:40px ;
+                animation-name: color;
+                animation-duration:20s ;
+                animation-timing-function:ease-in;
+                animation-iteration-count: infinite;
+            }
+            p {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size:20px ;
+                padding-top:0px;
+                cursor:auto;
+            }
+            .email {
+                width:auto;
+                height:40px;
+                border: none;
+                border-radius:2px;
+                text-align: center;
+                font-size: 20px;
+                margin-left: 20px;
+            }
+            .password {
+                width:auto;
+                height:40px;
+                border: none;
+                border-radius: 2px;
+                text-align: center;
+                font-size: 20px;
+                margin-left: 0px;
+            }
+            button {
+                position:relative;
+                width: 300px;
+                height: 40px;
+                margin-top:20px;
+                background-color: rgb(56, 247, 129);
+                font-style: italic;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size:30px;
+                border: none;
+                border-radius: 10px;
+                cursor:pointer;
+            }
+            #alert-email, #alert-pass{
+                font-size: 12px;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "container">
+            <div id = "photo">
+                <img src ="Profile-PNG-Free-Download.png" width =90px>
+            </div>
+            <p>Email :<label>
+            <input class = "email" id= "email" type = "email" placeholder="name@domain.com" spellcheck="true">
+            </label>
+            <div id="alert-email"></div>
+            <p>Password :<label>
+            <input class="password" id="password" type = "password" placeholder="password" ></label>
+            <div id = "alert-pass"></div>
+            <button type = "button" onclick="check();">Submit</button>
+            <footer style ="padding-top: 20px;">Made with ❤️ by Vasudev </footer></p>
+            <p style="font-size: 10px;">copyright &copy Vasudev</p>
+             
+        </div>
+        <script>
+         function check(){
+            let pass = document.getElementById("password").value;
+            let passAlert = document.getElementById("alert-pass");
+            let emailAddress = document.getElementById("email").value;
+            let emailAlert = document.getElementById("alert-email");
+            if(pass.length < 6){
+               passAlert.innerText = `*Password must contains atleast 6 digits`;
+            }
+            if((emailAddress.includes('@') == false)  || (emailAddress.inlcude('.') == false)){
+                emailAlert.innerText = 'Please enter a valid email address';
+            }
+            else if(emailAddress.includes('@') == true){
+                emailAlert.innerText = '';
+            }
+            else if(pass.length >= 6)
+            {
+                passAlert.innerText = '';
+            }
+            
+        }
+        
+        </script>
+    </body>
+</html>

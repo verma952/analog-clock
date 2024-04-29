@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Css animation</title>
+        <style>
+            body {
+    background-color:black;
+    margin: auto;
+    padding: auto;
+}
+
+
+.container {
+    position:center ;
+    margin:50px 0px 0px 200px ;
+    animation-name:rotat9ion;
+    animation-duration:4s;
+    animation-iteration-count:infinite;
+    text-align:center;
+    
+}
+
+.b1 {
+    background-color:#0f0;
+    width:670px;
+    height:670px;
+    animation-name:rotation;
+    animation-iteration-count:infinite;
+    animation-duration:3s;
+    position:absolute ;
+    text-shadow:20px;
+    
+}
+.b2 {
+    background-color:#f0f;
+    width:500px;
+    height:500px;
+    position:absolute;
+    animation-name:rotation;
+    animation-iteration-count:infinite;
+    animation-duration:3.02s;
+    position:absolute ;
+    margin:25px 25px;
+}
+.b3 {
+    background-color:#50f;
+    width:450px;
+    height:450px;
+    position:absolute;
+    animation-name:rotation;
+    animation-iteration-count:infinite;
+    animation-duration:3.04s;
+    position:absolute;
+    margin:50px 50px;
+}
+
+.b4 {
+    background-color:#ff0;
+    width:380px;
+    height:380px;
+    position:absolute;
+    animation-name:rotation;
+    animation-iteration-count:infinite;
+    animation-duration:3.06s;
+    position:absolute ;
+    margin:75px 75px;
+}
+ 
+ .b5 {
+    background-color:#4af;
+    width:300px;
+    height:300px;
+    position:absolute;
+    animation-name:rotation;
+    animation-iteration-count:infinite;
+    animation-duration:3.07s;
+    position:absolute ;
+    margin:85px 85px;
+}
+
+.b6 {
+    background-color:#6f0;
+    width:200px;
+    height:200px;
+    position:absolute;
+    animation-name:rotation;
+    animation-iteration-count:infinite;
+    animation-duration:3.08s;
+    position:absolute ;
+    margin:100px 100px;
+}
+
+.b7 {
+    background-color:#fa0;
+    width:150px;
+    height:150px;
+    position:absolute;
+    animation-name:rotation;
+    animation-iteration-count:infinite;
+    animation-duration:3.09s;
+    position:absolute ;
+    margin:110px 110px;
+}
+ 
+.b8 {
+    background-color:#fff;
+    width:100px;
+    height:100px;
+    position:absolute;
+    animation-name:rotation;
+    animation-iteration-count:infinite;
+    animation-duration:3.1s;
+    position:absolute;
+    margin:118px 118px;
+}
+ 
+
+@keyframes rotation {
+    50% { transform:rotate(360deg);
+           }
+    80% {  
+           width:0px;
+           height:0px;}
+    100%{background-color:#0ff;}
+}
+        </style>
+    </head>
+    <body>
+    <div class ="container" position="center">
+        <div class ="b1"></div>
+        <div class ="b2"></div>
+        <div class ="b3"></div>
+        <div class ="b4"></div>
+        <div class ="b5"></div>
+        <div class ="b6"></div>
+        <div class ="b7"></div>
+        <div class ="b8"></div>
+        </div>
+    </body>
+</html>

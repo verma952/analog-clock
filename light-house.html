@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Switch </title>
+    <style>
+        .toggle {
+            position:relative;
+            display: inline-block;
+            width:100px;
+            height:54px;
+            background-color: blue;
+            border-radius: 30px;
+            border: 2px solid red;
+
+        }
+        .toggle::after{
+            content: '';
+            position: absolute;
+            width: 50px;
+            height:50px;
+            border-radius:50%;
+            top: 1px;
+            left: 1px;
+            transition: all 0.5s;
+            background-color: brown;
+
+        }
+
+        .checkbox:checked + .toggle::after{
+            left: 49px;
+        }
+        .checkbox:checked + .toggle {
+            background-color: green;
+
+        }
+        .checkbox {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Light Switch Button</h1>
+    <input type="checkbox" id="switch" class="checkbox" onclick="switchDayNightMode()">
+    <label for="switch" class="toggle"></label>
+    <script>
+
+        let status = document.getElementById("switch").value;
+        console.log(status);
+        let body = document.getElementByName("body");
+        function switchDayNightMode(){
+            if (status =='on'){
+                document.bgColor= "black;";
+            }
+            else {
+                body.style = "background-color:white;";
+            }
+        }
+    </script>
+</body>
+</html>

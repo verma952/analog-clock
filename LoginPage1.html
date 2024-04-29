@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Loign</title>
+    <style>
+        body {
+            background-image:linear-gradient(to right, blue, rgb(145, 123, 231));
+        }
+        .container{
+           width: 300px;
+           height: 300px;
+           margin: auto;
+           margin-top: 30px;
+           color: aqua;
+           text-align: center;
+           background-color: white;
+           box-shadow:4px 3px 20px #d9d8d860;
+           padding:30px;
+           border: none;
+           border-radius: 10px;
+        }
+        .label {
+            font-size: 30px;
+        }
+        input{
+            width: 20px;
+            height: 30px;
+            margin: 10px;
+            margin-top: 40px;
+            border: none;
+            background-color: rgb(253, 253, 253);
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+        .button {
+            position: relative;
+            margin: 25px;
+            width: 100px;
+            height: 30px;
+            font: bold;
+            font-size: 20px;
+            text-align: center;
+            background-color: rgb(74, 249, 220);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button :hover {
+            width:110px ;
+            height:40px;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="password">
+            <button type="button" class="button">Login</button><br>
+            <a href="registration_page.html">New User? Sign Up here</a>
+   </div>
+</body>
+</html>
