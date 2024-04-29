@@ -1,0 +1,90 @@
+<!-- Here is a basic HTML code to build a calculator: -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style>
+		/* Add some basic styling to make the calculator look decent */
+		body {
+			font-family: Arial, sans-serif;
+		}
+		.calculator {
+			width: 200px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #f0f0f0;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+		}
+	</style>
+</head>
+<body>
+	<div class="calculator">
+		<!-- Display screen -->
+		<input type="text" id="display" value="0" disabled>
+		
+		<!-- Number buttons -->
+		<div class="button-row">
+			<button onclick="pressButton('1')">1</button>
+			<button onclick="pressButton('2')">2</button>
+			<button onclick="pressButton('3')">3</button>
+		</div>
+		<div class="button-row">
+			<button onclick="pressButton('4')">4</button>
+			<button onclick="pressButton('5')">5</button>
+			<button onclick="pressButton('6')">6</button>
+		</div>
+		<div class="button-row">
+			<button onclick="pressButton('7')">7</button>
+			<button onclick="pressButton('8')">8</button>
+			<button onclick="pressButton('9')">9</button>
+		</div>
+		
+		<!-- Operator buttons -->
+		<div class="button-row">
+			<button onclick="pressOperator('+')">+</button>
+			<button onclick="pressOperator('-')">-</button>
+			<button onclick="pressOperator('*')">*</button>
+			<button onclick="pressOperator('/')">/</button>
+		</div>
+		
+		<!-- Equal button -->
+		<button onclick="calculate()">=</button>
+		
+		<!-- Clear button -->
+		<button onclick="clearDisplay()">C</button>
+	</div>
+	
+	<script>
+		// Function to handle button presses
+		function pressButton(num) {
+			const display = document.getElementById("display");
+			display.value += num;
+		}
+		
+		// Function to handle operator button presses
+		function pressOperator(op) {
+			const display = document.getElementById("display");
+			display.value += op;
+		}
+		
+		// Function to calculate the result
+		function calculate() {
+			const display = document.getElementById("display");
+			const expression = display.value;
+			const result = eval(expression);
+			display.value = result;
+		}
+		
+		// Function to clear the display
+		function clearDisplay() {
+			const display = document.getElementById("display");
+			display.value = "0";
+		}
+	</script>
+</body>
+</html>
+
+ 
